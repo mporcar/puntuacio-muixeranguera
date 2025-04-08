@@ -1,8 +1,11 @@
 import streamlit as st
 import pandas as pd
 import numpy as np 
-st.write("Aquesta és una calculadora de puntuacions d'actuacions muixerangueres")
-
+st.title("Calculadora d'actuacions muixerangueres")
+st.write("Aquesta és una calculadora de puntuacions d'actuacions muixerangueres que segueix la següent fórmula per calcular la puntuació de cada figura")
+st.latex(r'''
+    Puntuació = a \cdot (Altura^q) \cdot \sqrt[p]{log(freq)} + \frac{Persones}{r} + 10\cdot FiguraDesplegada
+    ''')
 df = pd.read_csv("Puntuacio.csv")
 
 add_slider = st.sidebar.slider(
